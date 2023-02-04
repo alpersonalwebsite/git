@@ -1,6 +1,6 @@
 # SSH key and GitHub
 
-## Create a SSH key
+## Create an SSH key
 
 In your terminal go to `~/.ssh/`
 If you don't have this folder, just create it.
@@ -40,7 +40,7 @@ Copy to clipboard the content of the file.
 
 **Important**
 If you are in an `Organization` that has enabled/enforced SAML SSO, go to https://github.com/settings/keys and under your key click on `Configure SSO` and then `Authorize` your Organization.
-Then, click on continue in both screens.
+Then, click on continue on both screens.
 
 ## Add the SSH key to the Agent
 
@@ -85,14 +85,14 @@ github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXY
 
 Let's clone a repository to ensure that everything works as expected.
 
-### Clonning with SSH
-This requires private key locally and public key on GitHub
+### Cloning with SSH
+This requires a private key locally and a public key on GitHub
 
 ```shell
 git clone git@github.com:user-or-organization/repo.git
 ```
 
-### Clonning with HTTPS
+### Cloning with HTTPS
 This requires a token with the proper permissions
 
 First, let's generate a token (for more information about the usage of tokens instead of passwords, check: https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls)
@@ -101,18 +101,18 @@ First, let's generate a token (for more information about the usage of tokens in
 1. Click on Developer settings
 1. Click on Personal access tokens and generate a new access token with the permissions you need
 1. Copy the token to your clipboard
-1. Click on `Configure SSO` and then `Authorize` your Organization. Then, click on continue in both screens.
+1. Click on `Configure SSO` and then `Authorize` your Organization. Then, click on continue on both screens.
 
 
 Then...
 
-If you are clonning one of your personal repositoriers:
+If you are cloning one of your personal repository:
 
 ```shell
 git clone https://github.com/user/repo.git
 ```
 
-If you need to clone an organization repositorie:
+If you need to clone an organization repository:
 
 ```shell
 git clone https://user@github.com/organization/repo.git
