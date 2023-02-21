@@ -47,7 +47,7 @@ You should see the proper email tied to each configuration.
 
 Although this step is optional, I do recommend you install `oh-my-zsh` (if you are on Mac with macOS Catalina or higher) or, if you are using bash, create or update your `~/.bashrc` with the desired configuration.
 
-For the first case, go to https://ohmyz.sh/#install and install oh-my-zsh using curl or wget.
+For the first case, go to https://ohmyz.sh/#install and install `oh-my-zsh` using `curl` or `wget`.
 
 For the second, I like the following configuration (copy and paste the following snippet into your `~/.bashrc`)
 
