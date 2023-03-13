@@ -61,11 +61,55 @@ touch ~/.ssh/config
 Add to the configuration file:
 
 ```
-Host github.com-your-company-name
+Host your-company-name.github.com
   HostName github.com
-  User git
+  User your-work-github-username
   IdentityFile ~/.ssh/id_rsa_your-company-name
+  IdentitiesOnly yes
 ```
+
+Test connection:
+
+```
+ssh -T git@github.com
+```
+
+---
+
+If you want to have multiple `SSH keys` repeat the process.
+Your `~/.ssh/config` file should look like the following:
+
+```
+Host your-company-name.github.com
+  HostName github.com
+  User your-work-github-username
+  IdentityFile ~/.ssh/id_rsa_your-company-name
+  IdentitiesOnly yes
+
+Host personal.github.com
+  HostName github.com
+  User your-personal-github-username
+  IdentityFile ~/.ssh/id_rsa_personal
+  IdentitiesOnly yes
+```
+
+Test both connections: 
+
+```shell
+git@work.github.com 
+# Hi user-for-work! You've successfully authenticated, but GitHub does not provide shell access.
+
+ssh -T git@personal.github.com
+# Hi personal-user! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+In case you receive the error `ssh: Could not resolve hostname [hostname]: nodename nor servname provided, or not known` restart the `DNS responder`:
+
+```shell
+sudo killall -HUP mDNSResponder
+```
+
+Try again! Both connections should work.
 
 ## Add GitHub SSH keys to `~/.ssh/known_hosts`
 
@@ -106,7 +150,7 @@ First, let's generate a token (for more information about the usage of tokens in
 
 Then...
 
-If you are cloning one of your personal repository:
+If you are cloning one of your repositories:
 
 ```shell
 git clone https://github.com/user/repo.git
